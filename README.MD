@@ -1,8 +1,5 @@
 # week7 D2 Vue Currency Convertor
 
-# App Screenshot
-![app](images/app.png)
-
 # Running instructions:
 
 ##### Required:
