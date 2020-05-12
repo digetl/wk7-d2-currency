@@ -5,26 +5,27 @@ document.addEventListener('DOMContentLoaded', () => {
     el: "#app",
     data: {
         currencies: [],
-      
+        listOfCurrencyNames: []
     },
     computed:{
         convertedCurrency: function(){
-
         },
         convertedCurrencyName: function(){
-
+        },
+        initialCurrencyAmount: function(){
+            return this.currencies.USD;
         }
     },
     mounted(){
       this.fetchCurrencies();
     },
-
     methods: {
         fetchCurrencies: function(){
-            ("https://api.exchangeratesapi.io/latest")
+            fetch("https://api.exchangeratesapi.io/latest")
+            .then(response => response.json())
+            .then(data => this.currencies = data.rates)
         },
-       
+
     }
-    
   });
 });

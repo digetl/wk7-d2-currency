@@ -12,6 +12,38 @@
 <body>
   <div id="app">
     <h1>Currency convertor</h1>
-    <h1>1 EUR is equal to: {{convertedCurrency}}{{convertedCurrencyName}}</h1>
+    <h1>1 EUR is equal to: {{initialCurrencyAmount}} USD</h1>
+
+      <div>
+      <label for="currency_selectTo">Select a Currency from:</label>
+      <select id="currency_selectFrom" v-model="selectedCurrencyFrom">
+        <option disabled value="">Select a currency</option>
+        <option v-for="currency in currencies" :value="currency">{{currency}}</option>
+      </select>
+    </div>
+
+    <div>
+        <label for="currency_selectTo">Select a Currency to:</label>
+        <select id="currency_selectTo" v-model="selectedCurrencyTo">
+          <option disabled value="">Select a currency</option>
+          <option v-for="currency in currencies" :value="currency">{{currency}}</option>
+        </select>
+      </div>
+
+      <h1>1 currencyfrom is equal to: x currencyto</h1>
+
+      <div class="form-item">
+        <form v-on:submit.prevent="convertCurrency">
+          <label for="from" class="primary">From:</label>
+          <select>
+            <option disabled value="">Please select a country</option>
+            <option v-for="(key) in currencies">{{key}}</option>
+          </select>
+        </form>
+      </div>
+
+
+</div>
+
 </body>
 </html>
