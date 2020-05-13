@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     el: "#app",
     data: {
         currencies: [],
-        listOfCurrencyNames: []
+        currencyName: []
     },
     computed:{
         convertedCurrency: function(){
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
         fetchCurrencies: function(){
             fetch("https://api.exchangeratesapi.io/latest")
             .then(response => response.json())
-            .then(data => this.currencies = data.rates)
+            .then(data => this.currencies = data)
         },
 
     }

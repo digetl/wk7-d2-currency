@@ -33,14 +33,19 @@
       <h1>1 currencyfrom is equal to: x currencyto</h1>
 
       <div class="form-item">
-        <form v-on:submit.prevent="convertCurrency">
           <label for="from" class="primary">From:</label>
           <select>
             <option disabled value="">Please select a country</option>
-            <option v-for="(key) in currencies">{{key}}</option>
+            <option v-for="(currency, listOfCurrencyNames) in currencies">{{listOfCurrencyNames}}</option>
           </select>
-        </form>
+ 
+          <label for="from" class="primary">To:</label>
+          <select>
+            <option disabled value="">Please select a country</option>
+            <option v-for="(currency, currencyName) in currencies">{{currencyName}}</option>
+          </select>
       </div>
+      
 
 
 </div>
