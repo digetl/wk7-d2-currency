@@ -30,19 +30,19 @@
         </select>
       </div>
 
-      <h1>1 currencyfrom is equal to: x currencyto</h1>
+      <h1>1 currencyFrom is equal to: 1 currencyTo</h1>
 
       <div class="form-item">
           <label for="from" class="primary">From:</label>
           <select>
             <option disabled value="">Please select a country</option>
-            <option v-for="(currency, listOfCurrencyNames) in currencies">{{listOfCurrencyNames}}</option>
+            <option v-for="(currencyFrom, listOfCurrencyNames) in currencies">{{listOfCurrencyNames}}</option>
           </select>
  
           <label for="from" class="primary">To:</label>
           <select>
             <option disabled value="">Please select a country</option>
-            <option v-for="(currency, currencyName) in currencies">{{currencyName}}</option>
+            <option v-model="currencyTo" v-for="(currencyTo, currencyName) in currencies">{{currencyName}} {{currencyTo}}</option>
           </select>
       </div>
       
